@@ -11,10 +11,8 @@
     --white : #fff;
     /* Fonts */
     --font-family: "Montserrat";
-    --font-size: 15px;
     --font-weight: 700;
     /* Borders */
-    --borders: 1px solid black;
     --border-radius: 5px;
     --border-prof: 1px solid var(--light-grayish-blue);
     --border-basic-master: 1px solid var(--linear-gradient-2);
@@ -28,12 +26,14 @@
 
 body {
     background-color: var(--very-light-grayish-blue);
+    background: url(./images/bg-top.svg);
+    background-repeat: no-repeat;
+    background-position: 200px -25px;
     min-height: 100vh;
     display: grid;
     align-content: center;
     text-align: center;
     font-family: var(--font-family);
-    font-size: var(--font-size);
     font-weight: var(--font-weight);
 }
 
@@ -162,7 +162,7 @@ h2 {
 
 .price-monthly,
 .price-annually {
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 .hidden {
@@ -170,13 +170,18 @@ h2 {
 }
 
 .dollar {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-right: 3px;
     align-self: center;
 }
 
 /* DETAILS */
 .details {
+    color: var(--grayish-blue);
+    font-size: 0.5em;
+}
+.details-prof {
+    color: var(--white);
     font-size: 0.5em;
 }
 
@@ -231,8 +236,65 @@ h2 {
     cursor: pointer;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) { /* Tablet - Desktop */
+    body {
+        background-image: url(./images/bg-top.svg), url(./images/bg-bottom.svg);
+		background-repeat: no-repeat, no-repeat;
+		background-position: top right, bottom left;
+        background-size: 25%;
+    }
     .container {
         flex-direction: row;
+        justify-content: center;
+        gap: 0px;
+        margin-top: 50px;
+    }
+    h1 {
+        font-size: 2rem;
+        margin-top: 0;
+        margin-bottom: 40px;;
+    }
+    .pricing {
+        width: 15%;
+        justify-self: center;
+        margin: auto;        
+    }
+    .pricing > span {
+        font-size: 1rem;
+    }
+
+    /* CARDS */
+    .basic-master,
+    .professional {
+        padding: 50px 30px;
+    }
+    .basic-master {
+        margin-block: 1.5rem;
+    }
+    .price-monthly,
+    .price-annually {
+        font-size: 4.5rem;
+    }
+    h2 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+    .dollar {
+        font-size: 2.4rem;
+        padding-right: 5px;
+    }
+
+    /* DETAILS */
+    .details,
+    .details-prof {
+        font-size: 1em;
+    }
+
+    /* BUTTONS */
+    .prof-btn,
+    .basic-master-btn {
+    padding: 10px;
+    font-size: 1rem;
+    margin-top: 10px;
     }
 }
