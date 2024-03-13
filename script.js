@@ -8,5 +8,5 @@ switchPrices.addEventListener("click", () => {
     });
     priceAnnuallySpans.forEach(span => {
         span.classList.toggle("hidden");
-    })
+    });
 });
